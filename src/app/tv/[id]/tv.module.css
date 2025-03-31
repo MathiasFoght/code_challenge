@@ -1,0 +1,212 @@
+.container {
+    min-height: 100vh;
+    background-color: #0f0f0f;
+    color: white;
+}
+
+.heroSection {
+    position: relative;
+    height: 70vh;
+    overflow: hidden;
+}
+
+.backdropImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.heroGradient {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to top, #0f0f0f, rgba(15, 15, 15, 0.8) 50%, rgba(15, 15, 15, 0.4));
+    z-index: 2;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tagline {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #e2e2e2;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.releaseYear {
+    display: inline-block;
+    background-color: rgba(229, 62, 62, 0.8);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.contentSection {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem 4rem;
+}
+
+.tvDetails {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.posterContainer {
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    height: fit-content;
+}
+
+.poster {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.5rem;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.overview {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #e2e2e2;
+    margin-bottom: 2rem;
+}
+
+.detailsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.detailItem {
+    background-color: rgba(26, 32, 44, 0.5);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #2d3748;
+}
+
+.detailLabel {
+    font-size: 0.875rem;
+    color: #a0aec0;
+    margin-bottom: 0.5rem;
+}
+
+.detailValue {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    background-color: transparent;
+    border: 2px solid #f56565;
+    border-radius: 0.375rem;
+    transition: all 0.3s ease;
+    margin-top: 2rem;
+    width: fit-content;
+}
+
+.backLink:hover {
+    background-color: #e53e3e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
+}
+
+.backIcon {
+    margin-right: 0.5rem;
+}
+
+.wishlistContainer {
+    margin: 2rem 0;
+    border: 2px solid #f56565;
+    padding: 0.75rem 1.5rem;
+    width: fit-content;
+    border-radius: 0.375rem;
+    transition: all 0.3s ease;
+}
+
+.wishlistContainer:hover {
+    background-color: #e53e3e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
+}
+
+.endedStatus {
+    background-color: rgba(229, 62, 62, 0.8);
+}
+
+@media (min-width: 640px) {
+    .heroContent {
+        padding: 3rem 2rem;
+    }
+
+    .contentSection {
+        padding: 3rem 2rem 5rem;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .tvDetails {
+        grid-template-columns: 300px 1fr;
+    }
+
+    .title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .title {
+        font-size: 4rem;
+    }
+
+    .tagline {
+        font-size: 1.5rem;
+    }
+
+    .overview {
+        font-size: 1.25rem;
+    }
+}
+

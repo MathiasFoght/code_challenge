@@ -1,0 +1,129 @@
+.contentSection {
+    padding: 4rem 1rem;
+}
+
+.movieSection {
+    background-image: linear-gradient(to bottom, #1a202c, black);
+}
+
+.tvSection {
+    background-image: linear-gradient(to bottom, #1a202c, black);
+}
+
+@media (min-width: 640px) {
+    .contentSection {
+        padding: 4rem 1.5rem;
+    }
+}
+
+.pageContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: white;
+}
+
+.sectionTitleUnderline {
+    display: inline-block;
+    border-bottom: 2px solid #e53e3e;
+    padding-bottom: 0.25rem;
+}
+
+@media (min-width: 768px) {
+    .sectionTitle {
+        font-size: 2.25rem;
+    }
+}
+
+.genreContainer {
+    margin-bottom: 4rem;
+}
+
+.genreHeader {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.genreTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+    .genreTitle {
+        font-size: 1.5rem;
+    }
+}
+
+.genreTitleLink {
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+    color: white;
+}
+
+.genreTitleLink:hover {
+    color: #f56565;
+}
+
+.genreCount {
+    margin-left: 0.5rem;
+    font-size: 0.875rem;
+    color: #a0aec0;
+    font-weight: 400;
+}
+
+.moreLink {
+    font-size: 0.875rem;
+    color: #a0aec0;
+    transition: color 0.3s;
+}
+
+.moreLink:hover {
+    color: #f56565;
+}
+
+.mediaGrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .mediaGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .mediaGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .mediaGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .mediaGrid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
