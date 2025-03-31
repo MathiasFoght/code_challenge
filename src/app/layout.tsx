@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/shared/navbar/navbar";
-import Footer from "./components/shared/footer/footer";
 import React from "react";
+import dynamic from "next/dynamic";
+
+// Lazy load
+const Navbar = dynamic(() => import("./components/shared/navbar/navbar"), { ssr: true });
+const Footer = dynamic(() => import("./components/shared/footer/footer"), { ssr: true });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

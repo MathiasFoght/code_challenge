@@ -1,8 +1,10 @@
 import { fetchTVShowsByGenre, fetchTVGenres } from '@/app/api/routes/data';
 import { GenrePageProps } from '@/types';
 import styles from './tvGenre.module.css';
-import MediaList from '@/app/components/mediaList'
 import {Film} from "lucide-react";
+import dynamic from "next/dynamic";
+
+const MediaList = dynamic(() => import('@/app/components/mediaList'), { ssr: true });
 
 export default async function TvShowGenrePage({ params }: GenrePageProps) {
     const { id } = await params;

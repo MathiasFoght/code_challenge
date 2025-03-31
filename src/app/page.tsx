@@ -1,5 +1,8 @@
-import HomeClient from "@/app/components/home/homeClient/homeClient"
 import {fetchTrendingData, getMovieGenresWithSamples, getTVGenresWithSamples} from "@/app/api/routes/data";
+import dynamic from "next/dynamic";
+
+// Lazy load
+const HomeClient = dynamic(() => import("@/app/components/home/homeClient/homeClient"), { ssr: true });
 
 export default async function HomePage() {
     const movieGenresWithSamples = await getMovieGenresWithSamples();

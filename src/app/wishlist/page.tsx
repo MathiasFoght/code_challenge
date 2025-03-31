@@ -10,7 +10,7 @@ export default function WishlistPage() {
     const [wishlist, setWishlist] = useState<any[]>([])
     const [isLoaded, setIsLoaded] = useState(false)
 
-    // Get wishlist from local storage
+    // Get wishlist from local storage on mount
     useEffect(() => {
         const stored = localStorage.getItem("wishlist")
         if (stored) setWishlist(JSON.parse(stored))

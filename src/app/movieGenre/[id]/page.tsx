@@ -2,7 +2,10 @@ import { Film } from "lucide-react"
 import { fetchMoviesByGenre, fetchMovieGenres } from "@/app/api/routes/data"
 import type { GenrePageProps } from "@/types"
 import styles from "./movieGenre.module.css"
-import MediaList from "@/app/components/mediaList"
+import dynamic from "next/dynamic";
+
+// Lazy load
+const MediaList = dynamic(() => import("@/app/components/mediaList"), { ssr: true })
 
 export default async function MovieGenrePage({ params }: GenrePageProps) {
     const { id } = await params
