@@ -1,4 +1,3 @@
-// PageProps
 export type GenrePageProps = {
     params: { id: string};
 };
@@ -17,8 +16,6 @@ export type GenreWithCount = {
     count: number
 }
 
-
-// ComponentProps
 export type Movie = {
     id: number;
     title: string;
@@ -84,7 +81,7 @@ export type TrendingItem = {
 export type HomeClientProps = {
     movieGenresWithSamples: GenreWithSamples[];
     tvGenresWithSamples: GenreWithSamples[];
-    trendingMovies: TrendingItem[];
+    trending: TrendingItem[];
 };
 
 export type AddToWishlistButtonProps = {
@@ -96,5 +93,10 @@ export type MediaListProps = {
     initialItems: any[]
     genreId: number
     type: "movie" | "tv"
+}
+
+export type LoadMoreButtonProps = {
+    onClick: () => void;
+    loading: boolean;
 }
 

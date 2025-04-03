@@ -4,17 +4,21 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import styles from "./mediaList.module.css"
-import { loadMoreMovies, loadMoreTV } from '@/app/api/routes/data'
+import {loadMoreTV, loadMoreMovies} from "@/app/api/routes/loadMore/loadMore";
 import {MediaListProps} from "@/types";
+import dynamic from "next/dynamic";
 
+const LoadMoreButton = dynamic(() => import('@/app/components/buttons/loadMoreButton'), {
+    ssr: false,
+});
 
 export default function MediaList({ initialItems, genreId, type }: MediaListProps) {
     const [items, setItems] = useState<any[]>(initialItems)
     const [page, setPage] = useState(1)
     const [loading, setLoading] = useState(false)
 
-    // Load more items
-    const loadMore = async () => {
+    // Load more handler
+    const loadMoreHandler = async () => {
         setLoading(true)
         try {
             const data = type === "movie" ? await loadMoreMovies(genreId, page + 1) : await loadMoreTV(genreId, page + 1)
@@ -65,16 +69,7 @@ export default function MediaList({ initialItems, genreId, type }: MediaListProp
             )}
 
             {items.length > 0 && (
-                <button onClick={loadMore} disabled={loading} className={styles.loadMoreButton}>
-                    {loading ? (
-                        <span className={styles.loadingText}>
-                            <span className={styles.loadingSpinner}></span>
-                            Loading...
-                        </span>
-                    ) : (
-                        "Load More"
-                    )}
-                </button>
+                <LoadMoreButton onClick={loadMoreHandler} loading={loading} />
             )}
         </div>
     )

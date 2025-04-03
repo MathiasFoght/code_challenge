@@ -128,31 +128,6 @@
     font-weight: 500;
 }
 
-.backLink {
-    display: inline-flex;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.75rem 1.5rem;
-    background-color: transparent;
-    border: 2px solid #f56565;
-    border-radius: 0.375rem;
-    transition: all 0.3s ease;
-    margin-top: 2rem;
-    width: fit-content;
-}
-
-.backLink:hover {
-    background-color: #e53e3e;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
-}
-
-.backIcon {
-    margin-right: 0.5rem;
-}
-
 .wishlistContainer {
     margin: 2rem 0;
     border: 2px solid #f56565;

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from "next/link"
-import MediaCard from "@/app/components/home/mediaCard/mediaCard"
+import MediaCard from "@/app/components/media/mediaCard/mediaCard"
 import styles from "./mediaSection.module.css"
 import {MediaSectionProps} from "@/types";
 
@@ -24,12 +24,10 @@ export default function MediaSection({ title, genres, type }: MediaSectionProps)
                     <div key={genre.id} className={styles.genreContainer}>
                         <div className={styles.genreHeader}>
                             <h3 className={styles.genreTitle}>
-                                <Link href={`/${type === "movie" ? "movieGenre" : "tv"}/${genre.id}`} className={styles.genreTitleLink}>
-                                    {genre.name}
-                                    <span className={styles.genreCount}>
-                    ({genre.count} {type === "movie" ? "films" : "shows"})
-                  </span>
-                                </Link>
+                                {genre.name}
+                                <span className={styles.genreCount}>
+                                    ({genre.count} {type === "movie" ? "films" : "shows"})
+                                </span>
                             </h3>
                             <Link href={`/${type === "movie" ? "movieGenre" : "tvGenre"}/${genre.id}`} className={styles.moreLink}>
                                 See More

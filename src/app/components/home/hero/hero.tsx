@@ -13,8 +13,7 @@ export default function Hero({
     }: HeroProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
-
-    // Handle the interval for changing the image every 5 seconds
+    // Handle the interval slideshow of trending data
     useEffect(() => {
         if (trendingData.length > 0) {
             const interval = setInterval(() => {
@@ -32,9 +31,7 @@ export default function Hero({
     const currentItem = trendingData[currentIndex];
     const displayTitle = currentItem.title || currentItem.name || "Unknown Title";
     const displayOverview = currentItem.overview;
-    const imageSrc = currentItem.poster_path
-        ? `https://image.tmdb.org/t/p/w780${currentItem.poster_path}`
-        : "https://placehold.co/600x400";
+    const imageSrc = currentItem.poster_path ? `https://image.tmdb.org/t/p/w780${currentItem.poster_path}` : "https://placehold.co/600x400";
 
     return (
         <section className={styles.heroSection}>
@@ -50,6 +47,8 @@ export default function Hero({
                 <h1 className={styles.heroMainTitle}>Whats Trending This Week</h1>
                 <h2 className={styles.heroTitle}>{displayTitle}</h2>
                 <p className={styles.heroDescription}>{displayOverview}</p>
+
+                {/* Call to action */}
                 <div className={styles.buttonContainer}>
                     <button className={styles.primaryButton} onClick={onCallToActionClick}>
                         <Star className={styles.buttonIcon} size={20} />

@@ -1,13 +1,13 @@
-import Link from "next/link"
 import Image from "next/image"
-import {ArrowLeft, Film, User} from "lucide-react"
-import { fetchMovieDetails } from "@/app/api/routes/data"
+import { Film, User} from "lucide-react"
+import { fetchMovieDetails } from "@/app/api/routes/details/details"
 import dynamic from "next/dynamic"
 import type { MoviePageProps } from "@/types"
 import styles from "./movie.module.css"
 
 // Lazy load
-const AddToWishlistButton = dynamic(() => import("@/app/components/addToWishlistButton"), { ssr: true })
+const AddToWishlistButton = dynamic(() => import("@/app/components/buttons/addToWishlistButton"), { ssr: true })
+const BackButton = dynamic(() => import("@/app/components/buttons/backButton"), { ssr: true })
 
 export default async function MoviePage({ params }: MoviePageProps) {
     const { id } = await params
@@ -99,10 +99,7 @@ export default async function MoviePage({ params }: MoviePageProps) {
                             <AddToWishlistButton item={movie} itemType="movie" />
                         </div>
 
-                        <Link href="/" className={styles.backLink}>
-                            <ArrowLeft className={styles.backIcon} size={18} />
-                            Back to Home
-                        </Link>
+                        <BackButton />
                     </div>
                 </div>
             </section>

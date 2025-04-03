@@ -1,10 +1,14 @@
 "use client";
 
 import Hero from "@/app/components/home/hero/hero";
-import MediaSection from "@/app/components/home/mediaSection/mediaSection";
 import { HomeClientProps } from "@/types"
+import dynamic from "next/dynamic";
 
-export default function HomeClient({ movieGenresWithSamples, tvGenresWithSamples, trendingMovies }: HomeClientProps) {
+const MediaSection = dynamic(() => import("@/app/components/media/mediaSection/mediaSection"), {
+    ssr: false,
+});
+
+export default function HomeClient({ movieGenresWithSamples, tvGenresWithSamples, trending }: HomeClientProps) {
 
     const handleCallToActionClick = () => {
         window.location.href = "/wishlist";
@@ -19,7 +23,7 @@ export default function HomeClient({ movieGenresWithSamples, tvGenresWithSamples
                 callToActionButtonText="See your favorites"
                 secondaryButtonText="See your favorites"
                 onCallToActionClick={handleCallToActionClick}
-                trendingData={trendingMovies}
+                trendingData={trending}
             />
 
             <MediaSection
