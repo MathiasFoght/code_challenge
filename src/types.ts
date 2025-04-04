@@ -1,13 +1,13 @@
 export type GenrePageProps = {
-    params: { id: string};
+    params: Promise<{ id: string }>;
 };
 
 export type MoviePageProps = {
-    params: { id: string };
+    params: Promise<{ id: string }>;
 };
 
 export type TvPageProps = {
-    params: { id: string };
+    params: Promise<{ id: string }>;
 };
 
 export type GenreWithCount = {
